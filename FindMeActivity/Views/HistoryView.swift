@@ -15,7 +15,7 @@ struct HistoryView: View {
                 .lilacTitle()
             
             List {
-                ForEach(1...activityHistory.count-1, id:\.self) {
+                ForEach(0...activityHistory.count-2, id:\.self) {
                   InfoCard(activityCard: activityHistory[$0])
                 }
                 
