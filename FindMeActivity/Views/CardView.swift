@@ -20,7 +20,7 @@ struct CardView: View {
             ActivityView()
                 .environmentObject(ActivityManager())
         } label: {
-            PrimaryButton(text: "Get More")
+            PrimaryButton(text: "Go Back")
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
