@@ -1,0 +1,37 @@
+//
+//  CardView.swift
+//  FindMeActivity
+//
+//  Created by Heeral Jain on 6/28/22.
+//
+
+import SwiftUI
+
+struct CardView: View {
+    @EnvironmentObject var activityManager: ActivityManager
+    var body: some View {
+        VStack(spacing: 10){
+            Text("New Activity Found")
+                .lilacTitle()
+            InfoCard(activityCard: activityManager.metadata)
+        }
+        
+        NavigationLink {
+            ActivityView()
+                .environmentObject(ActivityManager())
+        } label: {
+            PrimaryButton(text: "Get More")
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(red: 0.98431, green: 0.9411, blue: 0.64))
+        .navigationBarHidden(true)
+    }
+}
+
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardView()
+            .environmentObject(ActivityManager())
+    }
+}
